@@ -1,143 +1,250 @@
-# Verifactu Landing
+# VeriFactu Business — Landing Pública
 
-Modern Next.js landing page for Verifactu platform.
+Landing oficial de **verifactu.business**, desplegada en **Google Cloud Run** (región `europe-west1`) y construida con **Next.js (App Router)**.
 
-## Features
+La landing es **independiente del resto del monorepo** y está diseñada para:
+- Conversión (CTA + pricing dinámico)
+- Captura de leads (email vía Resend)
+- Chat inteligente "Isaak" (Vertex AI / Gemini)
+- Despliegue estable y reproducible en Cloud Run
 
-- 🎨 Modern, responsive design
-- 📧 Lead form with email integration (Resend)
-- 💬 AI-powered chat widget (Google Vertex AI)
-- 📊 Dynamic pricing calculator
-- 🚀 Optimized for production deployment
-- 🔒 Form validation with Zod
-- ⚡ Built with Next.js 14 and React 18
+---
 
-## Getting Started
+## 🌍 Producción
 
-### Prerequisites
+- **Dominio:** https://verifactu.business  
+- **Servicio Cloud Run:** `verifactu-landing`  
+- **Región:** `europe-west1`  
+- **Autenticación:** pública (allow unauthenticated)
 
-- Node.js 20 or higher
-- npm or yarn
+---
 
-### Installation
-
-```bash
-# Install dependencies
-npm install
-
-# Copy environment variables
-cp .env.example .env.local
-
-# Update .env.local with your API keys
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser.
-
-### Build
-
-```bash
-npm run build
-npm start
-```
-
-## Environment Variables
-
-Required environment variables:
-
-- `RESEND_API_KEY` - API key for Resend email service
-- `FROM_EMAIL` - Sender email address
-- `LEAD_EMAIL` - Recipient email for leads
-- `GCP_PROJECT_ID` - Google Cloud Project ID for Vertex AI
-- `GCP_LOCATION` - GCP region (default: us-central1)
-
-See `.env.example` for details.
-
-## Docker Deployment
-
-```bash
-# Build the image
-docker build -t verifactu-landing -f apps/landing/Dockerfile .
-
-# Run the container
-docker run -p 3000:3000 \
-  -e RESEND_API_KEY=your_key \
-  -e GCP_PROJECT_ID=your_project \
-  verifactu-landing
-```
-
-## Project Structure
+## 📁 Estructura
 
 ```
 apps/landing/
 ├── app/
-│   ├── api/
-│   │   ├── send-lead/    # Lead submission endpoint
-│   │   └── vertex-chat/  # AI chat endpoint
-│   ├── globals.css       # Global styles
-│   ├── layout.tsx        # Root layout with metadata
-│   └── page.tsx          # Main landing page
+│   ├── page.tsx             # Landing principal
+│   ├── layout.tsx           # Layout global
+│   ├── globals.css          # Estilos
+│   └── api/
+│       ├── send-lead/route.ts    # Lead → email (Resend)
+│       └── vertex-chat/route.ts  # Chat IA → Vertex AI
+│
 ├── public/
-│   └── assets/           # Static assets
-├── Dockerfile            # Production Docker image
-├── next.config.js        # Next.js configuration
-├── package.json          # Dependencies
-└── tsconfig.json         # TypeScript configuration
+│   └── assets/              # Logos, iconos
+│
+├── Dockerfile               # Imagen Cloud Run (Next standalone)
+├── next.config.js           # output: "standalone"
+├── package.json
+└── README.md
 ```
 
-## Features
+---
 
-### Hero Section
-- Eye-catching headline and value proposition
-- Key metrics display (+12k invoices, 99.9% uptime, 48h onboarding)
-- Call-to-action buttons
-- Featured dashboard preview card
+## ⚙️ Requisitos
 
-### Features Section
-- Three main features with icons
-- Clear descriptions of platform capabilities
+- Node.js **20+**
+- npm
+- Acceso a Google Cloud (para deploy)
+- Cloud Run habilitado en el proyecto
 
-### How It Works
-- Three-step process explanation
-- Simple, visual presentation
+---
 
-### Solutions Section
-- Two pricing tiers (Standard and Custom)
-- Feature comparison
-- Clear CTAs for each tier
+## 🔐 Variables de entorno
 
-### Dynamic Pricing
-- Interactive slider for invoice volume
-- Real-time price calculation
-- Transparent pricing model
+### 1) Leads (Resend)
 
-### Lead Form Modal
-- Validates user input
-- Sends emails via Resend API
-- Success/error feedback
-- Clean, accessible design
+Usado por `POST /api/send-lead` para enviar correos al equipo.
 
-### AI Chat Widget
-- Floating chat button
-- Vertex AI integration
-- Context-aware responses
-- Handles common questions about Verifactu
+**Variables requeridas:**
 
-## Technologies
+```
+RESEND_API_KEY
+```
 
-- **Framework**: Next.js 14
-- **UI**: React 18 with TypeScript
-- **Styling**: Custom CSS with modern features
-- **Validation**: Zod
-- **Email**: Resend
-- **AI**: Google Vertex AI
-- **Deployment**: Docker-ready
+---
 
-## License
+### 2) Chat IA (Vertex AI)
 
-Proprietary - Verifactu © 2025
+Usado por `POST /api/vertex-chat`.
+
+**Variables requeridas:**
+
+```
+VERTEX_PROJECT_ID  # o GOOGLE_CLOUD_PROJECT
+VERTEX_LOCATION    # por defecto: europe-west1 o us-central1
+VERTEX_MODEL_ID    # por defecto: gemini-1.5-pro
+```
+
+> ℹ️ En Cloud Run, `GOOGLE_CLOUD_PROJECT` suele existir automáticamente.  
+> Aun así, se recomienda definir explícitamente `VERTEX_PROJECT_ID`.
+
+---
+
+## 🧪 Desarrollo local
+
+Desde la **raíz del monorepo**:
+
+```bash
+cd apps/landing
+npm ci
+npm run dev
+```
+
+Abrir:
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🏗️ Build local (validación)
+
+```bash
+cd apps/landing
+npm run build
+npm run start
+```
+
+---
+
+## 🔌 Endpoints disponibles
+
+### `POST /api/send-lead`
+
+Envía un email al equipo con la solicitud del usuario.
+
+**Body JSON:**
+
+```json
+{
+  "name": "Nombre",
+  "email": "email@dominio.com",
+  "company": "Empresa (opcional)",
+  "message": "Mensaje (opcional)",
+  "interest": "register | login | demo | trial"
+}
+```
+
+**Respuesta:**
+
+- `200` → `{ ok: true }`
+- `400` → datos obligatorios faltantes
+- `502` → error en Resend
+
+---
+
+### `POST /api/vertex-chat`
+
+Chat con el asistente Isaak (Vertex AI).
+
+**Body JSON:**
+
+```json
+{
+  "message": "Texto del usuario"
+}
+```
+
+**Respuesta:**
+
+- `200` → `{ ok: true, text: "respuesta IA" }`
+- `400` / `500` → error de configuración o Vertex
+
+---
+
+## 🚀 Deploy a Cloud Run (RECOMENDADO)
+
+El despliegue se hace desde la raíz del repo usando Cloud Build.
+
+### Deploy estándar
+
+```bash
+gcloud config set project verifactu-business-480212
+gcloud builds submit --config cloudbuild.yaml .
+```
+
+Este comando:
+
+1. Construye solo `apps/landing`
+2. Publica la imagen `verifactu-landing`
+3. Despliega en Cloud Run (`europe-west1`)
+4. Mantiene el dominio `verifactu.business`
+
+---
+
+## 🌐 Dominio
+
+El dominio está mapeado directamente a Cloud Run.
+
+**Comprobar estado:**
+
+```bash
+gcloud run domain-mappings describe verifactu.business --region europe-west1
+```
+
+**Si fuera necesario recrearlo:**
+
+```bash
+gcloud beta run domain-mappings create \
+  --domain verifactu.business \
+  --service verifactu-landing \
+  --region europe-west1
+```
+
+---
+
+## 🛠️ Troubleshooting
+
+### La build falla con `.next/standalone`
+
+Verifica que `next.config.js` contiene:
+
+```js
+output: "standalone"
+```
+
+---
+
+### No llegan emails de leads
+
+- Verifica `RESEND_API_KEY` en Cloud Run
+- Revisa logs:
+
+```bash
+gcloud run services logs read verifactu-landing --region europe-west1
+```
+
+---
+
+### El chat IA no responde
+
+- Revisa variables `VERTEX_*`
+- Verifica permisos del Service Account de Cloud Run para Vertex AI
+- Logs:
+
+```bash
+gcloud run services logs read verifactu-landing --region europe-west1
+```
+
+---
+
+## 🧠 Filosofía de la landing
+
+- **Independiente del core de la app**
+- Sin auth
+- Sin Stripe
+- Sin base de datos
+- Optimizada para velocidad, SEO y conversión
+- Toda la lógica sensible vive en server routes
+
+---
+
+## ✍️ Cambios habituales
+
+- **UI / copy:** `app/page.tsx`, `globals.css`
+- **Logos / iconos:** `public/assets`
+- **Emails / leads:** `app/api/send-lead`
+- **IA / chat:** `app/api/vertex-chat`
