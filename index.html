@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Verifactu - Cumple con la facturación digital</title>
+    <title>Veri*Factu Business - Automatiza tu facturación con IA</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon-verifactu.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,84 +13,163 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <div class="page">
       <header class="header">
         <div class="container header__inner">
-          <a href="#" class="brand">
-            <div class="brand__logo" aria-hidden="true">V</div>
-            <span class="brand__name">Verifactu</span>
+          <a href="#hero" class="brand" aria-label="Volver al inicio">
+            <img
+              src="assets/logo-verifactu-business.svg"
+              alt="VeriFactu Business"
+              class="brand__image"
+            />
           </a>
+
           <nav class="nav">
-            <a href="#features">Plataforma</a>
-            <a href="#steps">Cómo funciona</a>
-            <a href="#solutions">Soluciones</a>
+            <a href="#features">Producto</a>
+            <a href="#workflow">VeriFactu</a>
+            <a href="#pricing">Planes</a>
             <a href="#resources">Recursos</a>
-            <a href="#pricing">Precios</a>
           </nav>
+
           <div class="header__cta">
-            <a class="btn btn--ghost" href="#demo">Solicitar demo</a>
-            <a class="btn" href="#contact">Hablar con ventas</a>
+            <button class="btn btn--ghost" type="button" data-lead-open="login">
+              Acceder
+            </button>
+            <button class="btn btn--primary" type="button" data-lead-open="demo">
+              Solicitar demo
+            </button>
           </div>
         </div>
       </header>
 
       <main>
-        <section class="hero">
-          <div class="container hero__content">
-            <div class="hero__text">
-              <div class="pill">SII Verifactu</div>
-              <h1>
-                La forma más simple de emitir y cumplir con Verifactu para tu
-                negocio
-              </h1>
-              <p>
-                Centraliza tus puntos de emisión y automatiza el envío de los
-                libros de facturas al SII con una plataforma segura y
-                certificada.
+        <section id="hero" class="hero">
+          <div class="hero__background" aria-hidden="true"></div>
+
+          <div class="container hero__inner">
+            <div class="hero__copy">
+              <p class="hero__eyebrow">Cumple con VeriFactu y haz crecer tu negocio.</p>
+              <h1>La forma más inteligente de automatizar tu facturación.</h1>
+              <p class="hero__description">
+                Isaak centraliza la emisión, valida con AEAT y te sugiere cómo mejorar tus márgenes automáticamente.
               </p>
+
               <div class="hero__actions">
-                <a class="btn btn--primary" href="#demo">Solicitar demo</a>
-                <a class="btn btn--ghost" href="#contact">Hablar con ventas</a>
+                <button class="btn btn--primary" type="button" data-lead-open="register">
+                  Comenzar ahora
+                </button>
+                <button class="btn btn--ghost" type="button" data-lead-open="demo">
+                  Solicitar demo
+                </button>
               </div>
-              <div class="hero__stats">
-                <div>
-                  <span class="stat__value">+12k</span>
-                  <span class="stat__label">Facturas emitidas al mes</span>
+
+              <div class="hero__trust">
+                <span>Equipos fiscales, asesorías y despachos confían en Isaak.</span>
+              </div>
+            </div>
+
+            <div class="hero__mockup" aria-hidden="true">
+              <div class="mockup mockup--assistant">
+                <header class="mockup__header">
+                  <div>
+                    <span class="mockup__badge">Isaak IA</span>
+                    <p class="mockup__title">Estado diario del negocio</p>
+                  </div>
+                  <span class="mockup__status">Conectado</span>
+                </header>
+                <div class="mockup__body">
+                  <article class="mockup__message">
+                    <span class="mockup__avatar">🤖</span>
+                    <div>
+                      <p class="mockup__label">Isaak</p>
+                      <p class="mockup__text">
+                        Ingresos del mes +18% vs. objetivo. ¿Agendamos revisión para impuestos?
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="mockup__message mockup__message--light">
+                    <span class="mockup__avatar">🤖</span>
+                    <div>
+                      <p class="mockup__label">Isaak</p>
+                      <p class="mockup__text">
+                        Tu envío VeriFactu se ha validado. Preparando informe de márgenes.
+                      </p>
+                    </div>
+                  </article>
+
+                  <article class="mockup__message">
+                    <span class="mockup__avatar">🤖</span>
+                    <div>
+                      <p class="mockup__label">Isaak</p>
+                      <p class="mockup__text">
+                        Detecté suscripciones duplicadas. Ahorro potencial de 240 € trimestrales.
+                      </p>
+                    </div>
+                  </article>
                 </div>
-                <div>
-                  <span class="stat__value">99.9%</span>
-                  <span class="stat__label">Disponibilidad garantizada</span>
+              </div>
+
+              <div class="mockup mockup--snapshot">
+                <header>
+                  <span class="snapshot__title">Resumen VeriFactu</span>
+                  <span class="snapshot__chip">Cumplimiento 100%</span>
+                </header>
+                <div class="snapshot__grid">
+                  <div>
+                    <p class="snapshot__label">Beneficio neto</p>
+                    <p class="snapshot__value">12.450 €</p>
+                    <span class="snapshot__trend snapshot__trend--up">+18% mensual</span>
+                  </div>
+                  <div>
+                    <p class="snapshot__label">Facturas enviadas</p>
+                    <p class="snapshot__value">156</p>
+                    <span class="snapshot__trend">VeriFactu automático</span>
+                  </div>
+                  <div>
+                    <p class="snapshot__label">Alertas activas</p>
+                    <p class="snapshot__value">0</p>
+                    <span class="snapshot__trend snapshot__trend--safe">Isaak vigila</span>
+                  </div>
                 </div>
-                <div>
-                  <span class="stat__value">48h</span>
-                  <span class="stat__label">Onboarding promedio</span>
+              </div>
+
+              <div class="mockup mockup--invoice">
+                <header>
+                  <div>
+                    <span class="invoice__title">Factura VF-2031</span>
+                    <p class="invoice__subtitle">Estudio Creativo Nova</p>
+                  </div>
+                  <span class="invoice__status">Pagada</span>
+                </header>
+                <dl class="invoice__details">
+                  <div><dt>Emisión</dt><dd>12 Feb 2025</dd></div>
+                  <div><dt>Importe</dt><dd>1.250,00 €</dd></div>
+                  <div><dt>AEAT</dt><dd>Enviada</dd></div>
+                </dl>
+                <div class="invoice__footer">
+                  <div class="invoice__qr" role="img" aria-label="Código QR factura"></div>
+                  <p>Isaak confirma la validez VeriFactu y el cobro.</p>
                 </div>
               </div>
             </div>
-            <div class="hero__card" aria-labelledby="card-title">
-              <h2 id="card-title">Panel unificado</h2>
-              <p>Administra, monitoriza y envía facturas al SII sin fricciones.</p>
-              <ul class="card__list">
-                <li>
-                  <span class="dot dot--green"></span>
-                  Facturas y tickets en un único flujo
-                </li>
-                <li>
-                  <span class="dot dot--purple"></span>
-                  Validación automática del SII
-                </li>
-                <li>
-                  <span class="dot dot--blue"></span>
-                  Alertas en tiempo real
-                </li>
-              </ul>
-              <div class="card__footer">
-                <div>
-                  <span class="status">Estado</span>
-                  <span class="status__value">En cumplimiento</span>
-                </div>
-                <span class="status__badge">100%</span>
+          </div>
+
+          <div class="hero__stats">
+            <div class="container hero__stats-grid">
+              <div>
+                <p class="stat__value">+350%</p>
+                <p class="stat__label">Productividad en equipos fiscales</p>
+              </div>
+              <div>
+                <p class="stat__value">100%</p>
+                <p class="stat__label">Cumplimiento Real Decreto 1007/2023</p>
+              </div>
+              <div>
+                <p class="stat__value">24/7</p>
+                <p class="stat__label">Asistencia y recomendaciones con Isaak</p>
               </div>
             </div>
           </div>
@@ -98,138 +178,261 @@
         <section id="features" class="section features">
           <div class="container">
             <div class="section__header">
-              <h2>Una plataforma creada para liderar en Verifactu</h2>
+              <h2>Una plataforma creada para liderar tu VeriFactu.</h2>
               <p>
-                Diseñada para equipos de operaciones, contabilidad y tecnología
-                que necesitan cumplir con la normativa sin comprometer la
-                experiencia de sus clientes.
+                Centraliza la emisión, validación y análisis de tu facturación con paneles diseñados para asesorías,
+                despachos y empresas que necesitan precisión.
               </p>
             </div>
-            <div class="grid grid--three">
-              <article class="card">
-                <div class="icon icon--purple">01</div>
-                <h3>Orquestación omnicanal</h3>
-                <p>
-                  Conecta tus puntos de venta físicos y digitales en un único
-                  flujo para controlar cada factura emitida.
-                </p>
+
+            <div class="features__grid">
+              <article class="feature-card">
+                <h3>Automatización total</h3>
+                <p>Emite facturas con plantillas inteligentes y sincroniza tus libros con un clic.</p>
+                <span>Firmas digitales incluidas</span>
               </article>
-              <article class="card">
-                <div class="icon icon--green">02</div>
-                <h3>Automatización del envío</h3>
-                <p>
-                  Programación inteligente para entregar libros al SII sin
-                  errores ni retrasos.
-                </p>
+
+              <article class="feature-card">
+                <h3>VeriFactu integrado</h3>
+                <p>Envío y validación en tiempo real con seguimiento de estados y evidencias legales.</p>
+                <span>Notificaciones automáticas</span>
               </article>
-              <article class="card">
-                <div class="icon icon--blue">03</div>
-                <h3>Gobierno y seguridad</h3>
-                <p>
-                  Trazabilidad completa, controles de acceso y cifrado de extremo
-                  a extremo para tus datos.
-                </p>
+
+              <article class="feature-card">
+                <h3>Insights accionables</h3>
+                <p>Analiza márgenes, cashflow y proyecciones con escenarios sugeridos por IA.</p>
+                <span>Informes listos para clientes</span>
+              </article>
+
+              <article class="feature-card">
+                <h3>Colaboración segura</h3>
+                <p>Roles, permisos y auditoría completa con copias cifradas en la nube.</p>
+                <span>Certificado digital incluido</span>
               </article>
             </div>
           </div>
         </section>
 
-        <section id="steps" class="section steps">
+        <section id="workflow" class="section workflow">
           <div class="container">
             <div class="section__header">
-              <h2>De la emisión al envío en tres pasos</h2>
+              <h2>Del envío al cobro en tres pasos.</h2>
               <p>
-                Simplificamos la adaptación a Verifactu para que puedas seguir
-                creciendo mientras cumples la regulación.
+                Conecta tu ERP o empieza desde cero: Isaak guía a tu equipo, automatiza verificaciones y mantiene el
+                control fiscal sin esfuerzo.
               </p>
             </div>
-            <div class="grid grid--three">
+
+            <div class="workflow__steps">
               <article class="step">
-                <span class="step__badge">1</span>
-                <h3>Conecta tus fuentes</h3>
-                <p>
-                  Integraciones listas para tus ERPs, e-commerce y puntos de
-                  venta físicos.
-                </p>
+                <span class="step__number">1</span>
+                <h3>Configura Isaak</h3>
+                <p>Importa tus datos, define reglas de facturación y activa recordatorios personalizados.</p>
               </article>
+
               <article class="step">
-                <span class="step__badge">2</span>
-                <h3>Automatiza el flujo</h3>
-                <p>
-                  Reglas de negocio y validaciones que aseguran que cada factura
-                  cumple con los requisitos del SII.
-                </p>
+                <span class="step__number">2</span>
+                <h3>Emite y valida</h3>
+                <p>Genera la factura, firma automáticamente y envíala a AEAT VeriFactu sin abandonar la plataforma.</p>
               </article>
+
               <article class="step">
-                <span class="step__badge">3</span>
-                <h3>Envía y monitoriza</h3>
-                <p>
-                  Envío automático de libros, alertas en tiempo real y reportes
-                  auditables.
-                </p>
+                <span class="step__number">3</span>
+                <h3>Cobra y analiza</h3>
+                <p>Isaak monitoriza el cobro, detecta incidencias y propone acciones para mejorar tus márgenes.</p>
               </article>
             </div>
           </div>
         </section>
 
-        <section id="solutions" class="section solutions">
+        <section id="dashboard" class="section dashboard">
           <div class="container">
             <div class="section__header">
-              <h2>Elige la solución que mejor se adapta a tu organización</h2>
+              <h2>Un dashboard que aprende de tu negocio.</h2>
               <p>
-                Paquetes flexibles para cubrir desde necesidades estándar hasta
-                proyectos a medida.
+                Isaak acompaña a tu equipo con soporte, formación y automatizaciones que detectan necesidades de
+                facturación, contabilidad y tesorería en tiempo real.
               </p>
             </div>
-            <div class="solutions__grid">
-              <article class="plan">
-                <div class="plan__header">
-                  <h3>Solución estándar</h3>
-                  <p>
-                    Configuración acelerada y soporte especializado para equipos
-                    que necesitan cumplir rápido.
-                  </p>
+
+            <div class="dashboard__layout">
+              <div class="dashboard__preview" aria-hidden="true">
+                <div class="dashboard__screen">
+                  <div class="dashboard__screen-header">
+                    <span>Isaak Control Center</span>
+                    <span class="dashboard__badge">Suscripción Business Plus</span>
+                  </div>
+
+                  <div class="dashboard__metrics">
+                    <div class="dashboard__metric">
+                      <span class="dashboard__metric-label">Ventas del mes</span>
+                      <strong class="dashboard__metric-value">€48.230</strong>
+                      <span class="dashboard__metric-trend">+8,2% vs. febrero</span>
+                    </div>
+                    <div class="dashboard__metric">
+                      <span class="dashboard__metric-label">Cobros</span>
+                      <strong class="dashboard__metric-value">€36.900</strong>
+                      <span class="dashboard__metric-trend">12 facturas por conciliar</span>
+                    </div>
+                    <div class="dashboard__metric">
+                      <span class="dashboard__metric-label">Beneficio neto</span>
+                      <strong class="dashboard__metric-value">€12.410</strong>
+                      <span class="dashboard__metric-trend">Impuesto estimado: €2.136</span>
+                    </div>
+                  </div>
+
+                  <div class="dashboard__assistant-bubble">
+                    <p>
+                      Hola, soy Isaak 👋 He detectado tickets pendientes de gasto. ¿Quieres que los contabilice y programe
+                      recordatorios de pago?
+                    </p>
+                    <div class="dashboard__actions">
+                      <button type="button">Revisar con Isaak</button>
+                      <button type="button" class="ghost">Recordar más tarde</button>
+                    </div>
+                  </div>
+
+                  <div class="dashboard__panels">
+                    <div class="dashboard__panel">
+                      <h4>Importaciones activas</h4>
+                      <ul>
+                        <li><strong>Clientes</strong> · 1.240 registros sincronizados</li>
+                        <li><strong>Proveedores</strong> · Integración Drive completada</li>
+                        <li><strong>Productos</strong> · Nuevos artículos listos para venta</li>
+                      </ul>
+                    </div>
+                    <div class="dashboard__panel">
+                      <h4>Acciones sugeridas</h4>
+                      <ul>
+                        <li>Generar presupuesto rápido para «Proyecto Atlas»</li>
+                        <li>Emitir factura proforma y envío automático AEAT</li>
+                        <li>Planificar formación onboarding para nuevo asesor</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <ul class="plan__list">
-                  <li>Integraciones listas con ERPs líderes</li>
-                  <li>Automatización de libros y tickets</li>
-                  <li>Alertas en tiempo real</li>
-                  <li>Soporte prioritario</li>
+              </div>
+
+              <div class="dashboard__content">
+                <h3>Soporte proactivo y gestión total desde cualquier dispositivo.</h3>
+                <p>
+                  Accede con registro tradicional o Google OAuth y deja que Isaak personalice el espacio de trabajo:
+                  flujos de cobros y documentación disponible para tu equipo.
+                </p>
+                <ul class="dashboard__list">
+                  <li><strong>Suscripciones bajo control:</strong> gestiona planes, límites de usuarios y permisos.</li>
+                  <li><strong>Importación / exportación guiada:</strong> Isaak limpia y clasifica datos.</li>
+                  <li><strong>Operativa contable asistida:</strong> presupuestos, proformas y tickets desde móvil/email.</li>
+                  <li><strong>Finanzas al día:</strong> visualiza impagos, gastos, beneficio neto e impuestos sugeridos.</li>
                 </ul>
-                <a class="btn btn--block" href="#demo">Solicitar demo</a>
+
+                <div class="dashboard__cta">
+                  <a class="btn btn--primary" href="/app/signup">Probar gratis 30 días</a>
+                  <p>Sin compromiso ni datos de pago. Isaak te guía desde el primer acceso.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section compliance">
+          <div class="container compliance__inner">
+            <div class="compliance__content">
+              <h2>100% cumplimiento VeriFactu certificado.</h2>
+              <p>
+                Veri*Factu Business cumple con el Real Decreto 1007/2023 y mantiene tu evidencia fiscal siempre actualizada.
+              </p>
+              <ul class="compliance__list">
+                <li>✅ Firma digital automática</li>
+                <li>✅ Comunicación cifrada con AEAT</li>
+                <li>✅ Copias de seguridad en la nube</li>
+                <li>✅ Certificado digital incluido</li>
+              </ul>
+            </div>
+
+            <div class="compliance__badge" aria-hidden="true">
+              <div class="compliance__shield">VeriFactu</div>
+              <p>Cumplimiento verificado</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" class="pricing">
+          <div class="container">
+            <div class="pricing__header">
+              <h2>Planes y precios</h2>
+              <p>Elige cuota fija y deja que Isaak calcule el % sobre tus ventas.</p>
+              <p class="pricing__sub">
+                Todos los planes incluyen 30 días gratis, sin compromiso y sin datos de pago.
+              </p>
+            </div>
+
+            <div class="pricing__control card">
+              <label for="vf-sales">Ventas mensuales estimadas</label>
+              <div class="pricing__control-right">
+                <input id="vf-sales" type="number" min="0" step="100" value="10000" />
+                <span>€</span>
+              </div>
+            </div>
+
+            <div id="vf-pricing-grid" class="pricing__grid">
+              <!-- Renderizado por JS -->
+            </div>
+
+            <div class="pricing__note">
+              * El % se aplica únicamente a ventas facturadas en la app. Cálculo orientativo.
+            </div>
+          </div>
+        </section>
+
+        <section id="resources" class="section resources">
+          <div class="container">
+            <div class="section__header">
+              <h2>Recursos para dominar VeriFactu e Isaak.</h2>
+              <p>Guías, webinars y checklists para sacar el máximo a la plataforma.</p>
+            </div>
+
+            <div class="resources__grid">
+              <article class="resource-card">
+                <span class="resource-card__category">Guía</span>
+                <h3>Manual VeriFactu 2025</h3>
+                <p>Checklists y ejemplos aplicables preparados por equipo fiscal.</p>
+                <button class="resource-card__action" type="button" data-lead-open="guide">
+                  Descargar guía
+                </button>
               </article>
-              <article class="plan plan--highlight">
-                <div class="plan__header">
-                  <h3>A medida</h3>
-                  <p>
-                    Diseñamos junto a tu equipo un flujo personalizado sobre la
-                    infraestructura de Verifactu.
-                  </p>
-                </div>
-                <ul class="plan__list">
-                  <li>Integraciones a medida</li>
-                  <li>Gobierno y auditoría avanzada</li>
-                  <li>Soporte 24/7 y acuerdos SLA</li>
-                  <li>Consultoría regulatoria</li>
-                </ul>
-                <a class="btn btn--block btn--primary" href="#contact"
-                  >Hablar con ventas</a
-                >
+
+              <article class="resource-card">
+                <span class="resource-card__category">Webinar</span>
+                <h3>Onboarding con Isaak IA</h3>
+                <p>Configura automatizaciones, alertas y envíos en vivo.</p>
+                <button class="resource-card__action" type="button" data-lead-open="webinar">
+                  Reservar plaza
+                </button>
+              </article>
+
+              <article class="resource-card">
+                <span class="resource-card__category">Checklist</span>
+                <h3>Auditoría express de facturación</h3>
+                <p>Evalúa el ciclo de facturación con recomendaciones de Isaak.</p>
+                <button class="resource-card__action" type="button" data-lead-open="resources">
+                  Solicitar checklist
+                </button>
               </article>
             </div>
           </div>
         </section>
 
-        <section id="resources" class="section cta">
-          <div class="container cta__inner">
-            <div>
-              <h2>Listos para liderar el cambio en Verifactu</h2>
-              <p>
-                Nuestro equipo acompaña a empresas de retail, hospitality y
-                servicios en su transición a la facturación digital.
-              </p>
+        <section id="cta" class="section final-cta">
+          <div class="container final-cta__inner">
+            <div class="final-cta__content">
+              <h2>Factura menos. Vive más.</h2>
+              <p>Isaak IA automatiza tu contabilidad y te devuelve tiempo para lo importante.</p>
             </div>
-            <a class="btn btn--primary" href="#demo">Reserva una demo</a>
+            <div class="final-cta__actions">
+              <button class="btn btn--primary" type="button" data-lead-open="register">Registrarse</button>
+              <button class="btn btn--ghost" type="button" data-lead-open="trial">Empezar gratis 30 días</button>
+            </div>
           </div>
         </section>
       </main>
@@ -237,48 +440,352 @@
       <footer class="footer">
         <div class="container footer__grid">
           <div class="footer__brand">
-            <div class="brand">
-              <div class="brand__logo" aria-hidden="true">V</div>
-              <span class="brand__name">Verifactu</span>
-            </div>
-            <p>
-              Solución integral para la gestión y el cumplimiento de Verifactu.
-            </p>
+            <img src="assets/logo-verifactu-business.svg" alt="VeriFactu Business" class="brand__image" />
+            <p>Automatiza tu facturación con IA y cumplimiento VeriFactu certificado.</p>
+            <a class="footer__contact" href="mailto:soporte@verifactu.business">soporte@verifactu.business</a>
           </div>
-          <div class="footer__links">
-            <div>
-              <h4>Producto</h4>
-              <a href="#features">Características</a>
-              <a href="#steps">Cómo funciona</a>
-              <a href="#pricing">Precios</a>
-            </div>
-            <div>
-              <h4>Recursos</h4>
-              <a href="#resources">Casos de uso</a>
-              <a href="#contact">Documentación</a>
-              <a href="#contact">Soporte</a>
-            </div>
-            <div>
-              <h4>Compañía</h4>
-              <a href="#contact">Nosotros</a>
-              <a href="#contact">Privacidad</a>
-              <a href="#contact">Contacto</a>
-            </div>
+
+          <div class="footer__column">
+            <h4>Producto</h4>
+            <ul>
+              <li><a href="#hero">Resumen</a></li>
+              <li><a href="#features">Plataforma</a></li>
+              <li><a href="#workflow">Automatización</a></li>
+            </ul>
           </div>
-          <div class="footer__legal">
-            <p>© <span id="year"></span> Verifactu. Todos los derechos reservados.</p>
-            <div class="footer__socials">
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="Twitter">tw</a>
-              <a href="#" aria-label="YouTube">yt</a>
-            </div>
+
+          <div class="footer__column">
+            <h4>VeriFactu</h4>
+            <ul>
+              <li><a href="#workflow">Flujo oficial</a></li>
+              <li><a href="#pricing">Planes y precios</a></li>
+              <li><a href="#cta">Soporte</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h4>Recursos</h4>
+            <ul>
+              <li><a href="#resources">Guías y webinars</a></li>
+              <li><a href="#resources">Checklist</a></li>
+              <li>
+                <button class="footer__link-button" type="button" data-lead-open="demo">Solicitar demo</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container footer__bottom">
+          <p>© 2025 Veri*Factu Business · Todos los derechos reservados</p>
+          <div class="footer__legal-links">
+            <a href="#privacy">Política de Privacidad</a>
+            <a href="#terms">Condiciones de Uso</a>
+            <a href="#cookies">Cookies</a>
           </div>
         </div>
       </footer>
     </div>
 
+    <!-- Lead Modal -->
+    <div class="lead-modal" id="lead-modal" aria-hidden="true">
+      <div class="lead-modal__backdrop" data-lead-close></div>
+
+      <div class="lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
+        <button class="lead-modal__close" type="button" aria-label="Cerrar formulario" data-lead-close>×</button>
+
+        <h2 id="lead-modal-title">Conversemos sobre Veri*Factu Business</h2>
+        <p class="lead-modal__intro">
+          Déjanos tus datos y activaremos el flujo adecuado: acceso a la plataforma, demo con Isaak o configuración guiada.
+        </p>
+
+        <form class="lead-form" autocomplete="on">
+          <input type="hidden" name="interest" value="register" />
+
+          <div class="lead-form__grid">
+            <label class="lead-form__field">
+              <span>Nombre completo</span>
+              <input type="text" name="name" placeholder="María García" required />
+            </label>
+
+            <label class="lead-form__field">
+              <span>Correo electrónico</span>
+              <input type="email" name="email" placeholder="tu@empresa.com" required />
+            </label>
+          </div>
+
+          <label class="lead-form__field">
+            <span>Empresa</span>
+            <input type="text" name="company" placeholder="Nombre de tu empresa" />
+          </label>
+
+          <label class="lead-form__field">
+            <span>Cuéntanos qué necesitas</span>
+            <textarea name="message" rows="4" placeholder="Quiero automatizar mis facturas y validar con AEAT..."></textarea>
+          </label>
+
+          <div class="lead-form__footer">
+            <p class="lead-form__hint">
+              Usaremos estos datos para responder desde <strong>soporte@verifactu.business</strong>.
+            </p>
+            <button class="btn btn--primary" type="submit">Enviar solicitud</button>
+          </div>
+
+          <p class="lead-form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Isaak Chat (seguro: llama a /api/vertex-chat) -->
+    <button class="isaak-fab" type="button" aria-controls="isaak-chat" aria-expanded="false">
+      <span class="isaak-fab__avatar">🤖</span>
+      <span class="isaak-fab__label">Habla con Isaak</span>
+    </button>
+
+    <section class="isaak-chat" id="isaak-chat" aria-hidden="true">
+      <header class="isaak-chat__header">
+        <div>
+          <span class="isaak-chat__avatar">🤖</span>
+          <div>
+            <p class="isaak-chat__title">Isaak, asistente fiscal</p>
+            <p class="isaak-chat__status">Proactivo · Conectado a tu configuración</p>
+          </div>
+        </div>
+
+        <button class="isaak-chat__close" type="button" aria-label="Cerrar chat">×</button>
+      </header>
+
+      <div class="isaak-chat__proactive" role="log" aria-live="polite"></div>
+      <div class="isaak-chat__messages" role="list"></div>
+
+      <form class="isaak-chat__form" autocomplete="off">
+        <label class="sr-only" for="isaak-input">Escribe tu mensaje</label>
+        <input id="isaak-input" name="message" type="text" placeholder="Pregunta a Isaak sobre tu facturación" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
+      // Pricing dinámico (igual concepto que tu patch)
+      (function () {
+        const PLANS = [
+          { name: "Starter", price: 9.9, variablePct: 0.005, users: "1 usuario", ctaLabel: "Probar gratis", ctaHref: "/app/signup",
+            features: ["Envío AEAT VeriFactu", "Soporte básico", "Isaak IA (básico)", "30 días gratis. Sin compromiso ni datos de pago."], highlight: false
+          },
+          { name: "Professional", price: 24.9, variablePct: 0.003, users: "3 usuarios", ctaLabel: "Empezar", ctaHref: "/app/signup",
+            features: ["Dashboard avanzado", "Informes automáticos IA", "Integración nubes/correos", "30 días gratis. Sin compromiso ni datos de pago."], highlight: true
+          },
+          { name: "Business Plus", price: 49.9, variablePct: 0.002, users: "Hasta 10 usuarios", ctaLabel: "Solicitar demo", ctaHref: "/demo",
+            features: ["Multiempresa", "API avanzada", "Soporte prioritario", "30 días gratis. Sin compromiso ni datos de pago."], highlight: false
+          },
+          { name: "Enterprise", price: 0, variablePct: 0.001, users: "Ilimitado", ctaLabel: "Contactar", ctaHref: "/contact",
+            features: ["Integraciones a medida", "Auditoría fiscal avanzada", "Agente Isaak dedicado", "30 días gratis. Sin compromiso ni datos de pago."], highlight: false
+          },
+        ];
+
+        const grid = document.getElementById("vf-pricing-grid");
+        const sales = document.getElementById("vf-sales");
+
+        function currency(n) {
+          return n.toLocaleString("es-ES", { style: "currency", currency: "EUR" });
+        }
+
+        function getMonthlySales() {
+          const value = Number(sales.value);
+          return Number.isFinite(value) && value > 0 ? value : 0;
+        }
+
+        function render() {
+          const monthlySales = getMonthlySales();
+          grid.innerHTML = "";
+
+          PLANS.forEach((plan) => {
+            const variableFee = plan.variablePct * monthlySales;
+            const total = (plan.price || 0) + variableFee;
+
+            const card = document.createElement("div");
+            card.className = "pricing-card" + (plan.highlight ? " pricing-card--highlight" : "");
+
+            card.innerHTML = `
+              <div class="pricing-card__top">
+                <h3>${plan.name}</h3>
+                <span>${plan.users}</span>
+              </div>
+
+              <div class="pricing-card__price">
+                ${plan.price > 0 ? `<div class="price">${currency(plan.price)} <small>/mes</small></div>` : `<div class="price">A medida</div>`}
+                <div class="line">Comisión variable: <b>${(plan.variablePct * 100).toFixed(1)}%</b> sobre ventas</div>
+                <div class="line">Estimación variable: <b>${currency(variableFee)}</b> / mes</div>
+                <div class="line total">Total estimado: <b>${currency(total)}</b> / mes</div>
+              </div>
+
+              <ul class="pricing-card__list">
+                ${plan.features.map((f) => `<li>${f}</li>`).join("")}
+              </ul>
+
+              <a class="pricing-card__cta" href="${plan.ctaHref}">${plan.ctaLabel}</a>
+            `;
+
+            grid.appendChild(card);
+          });
+        }
+
+        sales.addEventListener("input", render);
+        render();
+      })();
+
+      // Lead modal → /api/send-lead
+      (function () {
+        const leadModal = document.getElementById("lead-modal");
+        const leadForm = leadModal.querySelector(".lead-form");
+        const leadStatus = leadForm.querySelector(".lead-form__status");
+        const leadInterestInput = leadForm.querySelector("input[name='interest']");
+        const leadCloseButtons = leadModal.querySelectorAll("[data-lead-close]");
+        const leadTriggers = document.querySelectorAll("[data-lead-open]");
+        const leadSubmitButton = leadForm.querySelector("button[type='submit']");
+        leadSubmitButton.dataset.defaultLabel = leadSubmitButton.textContent;
+
+        function setLeadStatus(message = "", state) {
+          leadStatus.textContent = message;
+          leadStatus.classList.remove("is-success", "is-error", "is-pending");
+          if (state) leadStatus.classList.add(`is-${state}`);
+        }
+
+        function openLeadModal(interest) {
+          setLeadStatus();
+          leadForm.reset();
+          leadInterestInput.value = interest || "register";
+          document.body.classList.add("is-modal-open");
+          leadModal.setAttribute("aria-hidden", "false");
+        }
+
+        function closeLeadModal() {
+          document.body.classList.remove("is-modal-open");
+          leadModal.setAttribute("aria-hidden", "true");
+        }
+
+        leadTriggers.forEach((t) => t.addEventListener("click", () => openLeadModal(t.dataset.leadOpen)));
+        leadCloseButtons.forEach((b) => b.addEventListener("click", closeLeadModal));
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && leadModal.getAttribute("aria-hidden") === "false") closeLeadModal();
+        });
+
+        leadForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          setLeadStatus("Enviando solicitud...", "pending");
+          leadSubmitButton.disabled = true;
+          leadSubmitButton.textContent = "Enviando...";
+
+          const payload = Object.fromEntries(new FormData(leadForm).entries());
+
+          try {
+            const response = await fetch("/api/send-lead", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            });
+
+            const result = await response.json().catch(() => ({}));
+
+            if (!response.ok || result?.ok === false) {
+              throw new Error(result?.error || "No se pudo enviar la solicitud.");
+            }
+
+            setLeadStatus("¡Gracias! Te contactaremos muy pronto.", "success");
+            leadForm.reset();
+          } catch (err) {
+            setLeadStatus(err instanceof Error ? err.message : "Error enviando la solicitud.", "error");
+          } finally {
+            leadSubmitButton.disabled = false;
+            leadSubmitButton.textContent = leadSubmitButton.dataset.defaultLabel;
+          }
+        });
+      })();
+
+      // Chat Isaak → /api/vertex-chat (seguro)
+      (function () {
+        const fab = document.querySelector(".isaak-fab");
+        const chat = document.getElementById("isaak-chat");
+        const chatClose = chat.querySelector(".isaak-chat__close");
+        const chatForm = chat.querySelector(".isaak-chat__form");
+        const chatMessages = chat.querySelector(".isaak-chat__messages");
+        const chatProactive = chat.querySelector(".isaak-chat__proactive");
+        const chatInput = document.getElementById("isaak-input");
+
+        const proactiveMessages = [
+          "Hola 👋 soy Isaak. ¿Quieres que configuremos tus envíos VeriFactu?",
+          "Puedo analizar tus márgenes y detectar ahorros fiscales en minutos.",
+          "¿Te guío paso a paso para validar tu siguiente envío a la AEAT?",
+        ];
+
+        function toggleChat(open) {
+          const isOpen = open ?? chat.getAttribute("aria-hidden") === "true";
+          chat.setAttribute("aria-hidden", String(!isOpen));
+          fab.setAttribute("aria-expanded", String(isOpen));
+          if (isOpen) chatInput.focus();
+        }
+
+        function addMessage({ from = "Isaak", text, pending = false }) {
+          const message = document.createElement("div");
+          message.className = `isaak-chat__message ${from === "Isaak" ? "from-isaak" : "from-user"}`;
+          message.innerHTML = `
+            <span class="isaak-chat__message-avatar">${from === "Isaak" ? "🤖" : "🙋"}</span>
+            <div>
+              <p class="isaak-chat__message-label">${from}</p>
+              <p class="isaak-chat__message-text">${text}</p>
+            </div>
+          `;
+          if (pending) message.classList.add("is-pending");
+          chatMessages.appendChild(message);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+          return message;
+        }
+
+        function showProactiveMessages() {
+          chatProactive.innerHTML = "";
+          proactiveMessages.forEach((text) => {
+            const bubble = document.createElement("div");
+            bubble.className = "isaak-chat__proactive-bubble";
+            bubble.textContent = text;
+            chatProactive.appendChild(bubble);
+          });
+        }
+
+        async function sendIsaakMessage(prompt) {
+          const pendingMessage = addMessage({ from: "Isaak", text: "Isaak está escribiendo...", pending: true });
+
+          try {
+            const response = await fetch("/api/vertex-chat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: prompt }),
+            });
+
+            const data = await response.json().catch(() => ({}));
+            const text = data?.text || data?.message || "No pude responder ahora mismo.";
+
+            pendingMessage.classList.remove("is-pending");
+            pendingMessage.querySelector(".isaak-chat__message-text").textContent = text;
+          } catch {
+            pendingMessage.classList.remove("is-pending");
+            pendingMessage.querySelector(".isaak-chat__message-text").textContent =
+              "No puedo conectarme con Isaak ahora mismo. Inténtalo más tarde.";
+          }
+        }
+
+        fab.addEventListener("click", () => toggleChat());
+        chatClose.addEventListener("click", () => toggleChat(false));
+        showProactiveMessages();
+
+        chatForm.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const message = chatInput.value.trim();
+          if (!message) return;
+
+          addMessage({ from: "Tú", text: message });
+          chatInput.value = "";
+          sendIsaakMessage(message);
+        });
+      })();
     </script>
   </body>
 </html>
