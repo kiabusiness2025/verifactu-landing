@@ -7,7 +7,7 @@ WORKDIR /app
 COPY apps/landing/package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production
+RUN npm ci
 
 # Copy application files
 COPY apps/landing .

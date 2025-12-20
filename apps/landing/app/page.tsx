@@ -460,8 +460,7 @@ export default function Home() {
           <div className="chat-header">
             <h3>Asistente Verifactu</h3>
             <button 
-              className="modal__close" 
-              style={{ position: 'static', color: 'white' }}
+              className="modal__close"
               onClick={() => setIsChatOpen(false)}
             >
               ×

@@ -634,6 +634,12 @@ a {
   border-color: var(--color-primary);
 }
 
+/* Modal Close Button (when inside chat header) */
+.chat-header .modal__close {
+  position: static;
+  color: white;
+}
+
 /* Modal */
 .modal {
   position: fixed;
