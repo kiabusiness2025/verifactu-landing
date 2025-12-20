@@ -18,7 +18,7 @@ export default function Home() {
   ])
   const [chatInput, setChatInput] = useState('')
   const [isSending, setIsSending] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Cleanup timeout on unmount
   useEffect(() => {

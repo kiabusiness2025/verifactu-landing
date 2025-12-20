@@ -43,15 +43,27 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Helper function to escape HTML to prevent XSS
+    const escapeHtml = (text: string): string => {
+      const map: Record<string, string> = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      }
+      return text.replace(/[&<>"']/g, (m) => map[m])
+    }
+
     // Send email using Resend
     const resend = new Resend(resendApiKey)
 
     const emailContent = `
       <h2>Nuevo Lead de Verifactu</h2>
-      <p><strong>Nombre:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      ${company ? `<p><strong>Empresa:</strong> ${company}</p>` : ''}
-      ${message ? `<p><strong>Mensaje:</strong></p><p>${message}</p>` : ''}
+      <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      ${company ? `<p><strong>Empresa:</strong> ${escapeHtml(company)}</p>` : ''}
+      ${message ? `<p><strong>Mensaje:</strong></p><p>${escapeHtml(message)}</p>` : ''}
     `
 
     const recipientEmail = process.env.LEAD_EMAIL || 'leads@verifactu.business'
@@ -59,7 +71,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: process.env.FROM_EMAIL || 'noreply@verifactu.business',
       to: recipientEmail,
-      subject: `Nuevo lead: ${name}`,
+      subject: `Nuevo lead: ${escapeHtml(name)}`,
       html: emailContent,
     })
 
