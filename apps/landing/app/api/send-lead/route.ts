@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { Resend } from 'resend'
 
 // Schema for validation
 const leadSchema = z.object({
@@ -43,7 +44,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email using Resend
-    const { Resend } = await import('resend')
     const resend = new Resend(resendApiKey)
 
     const emailContent = `

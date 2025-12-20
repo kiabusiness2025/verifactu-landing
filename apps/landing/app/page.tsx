@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, useRef, useEffect, FormEvent } from 'react'
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -18,6 +18,16 @@ export default function Home() {
   ])
   const [chatInput, setChatInput] = useState('')
   const [isSending, setIsSending] = useState(false)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
 
   const calculatePrice = (volume: number) => {
     if (volume <= 1000) return 49
@@ -45,7 +55,12 @@ export default function Home() {
       if (response.ok) {
         setFormStatus({ type: 'success', message: '¡Gracias! Nos pondremos en contacto contigo pronto.' })
         setFormData({ name: '', email: '', company: '', message: '' })
-        setTimeout(() => {
+        // Clear any existing timeout
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current)
+        }
+        // Set new timeout and store reference
+        timeoutRef.current = setTimeout(() => {
           setIsModalOpen(false)
           setFormStatus(null)
         }, 2000)

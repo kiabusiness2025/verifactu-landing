@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { VertexAI } from '@google-cloud/vertexai'
 
 // Schema for validation
 const chatSchema = z.object({
@@ -39,8 +40,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Initialize Vertex AI
-    const { VertexAI } = await import('@google-cloud/vertexai')
-    
     const vertexAI = new VertexAI({
       project: projectId,
       location: location,

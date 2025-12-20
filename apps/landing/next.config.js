@@ -9,7 +9,12 @@ const nextConfig = {
     }
   },
   images: {
-    domains: ["verifactu.business"]
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'verifactu.business',
+      },
+    ],
   }
 }
 
