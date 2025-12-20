@@ -22,11 +22,11 @@ export async function POST(request: NextRequest) {
     const { message } = validationResult.data
 
     // Check for required environment variables
-    const projectId = process.env.GCP_PROJECT_ID
-    const location = process.env.GCP_LOCATION || 'us-central1'
+    const projectId = process.env.VERTEX_PROJECT_ID || process.env.GCP_PROJECT_ID || process.env.GOOGLE_CLOUD_PROJECT
+    const location = process.env.VERTEX_LOCATION || process.env.GCP_LOCATION || 'us-central1'
 
     if (!projectId) {
-      console.error('GCP_PROJECT_ID not configured')
+      console.error('VERTEX_PROJECT_ID (or GCP_PROJECT_ID) not configured')
       // In development, provide mock response
       if (process.env.NODE_ENV === 'development') {
         const mockResponse = generateMockResponse(message)
@@ -46,8 +46,8 @@ export async function POST(request: NextRequest) {
       location: location,
     })
 
-    const model = vertexAI.preview.getGenerativeModel({
-      model: 'gemini-pro',
+    const model = vertexAI.getGenerativeModel({
+      model: process.env.VERTEX_MODEL_ID || 'gemini-1.5-pro',
     })
 
     const systemPrompt = `Eres un asistente experto en Verifactu y facturación digital en España. 
